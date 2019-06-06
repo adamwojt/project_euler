@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import os
 import sys    
 
-def add(filename):
+def add(filename): # looks for number in .py file name and scrapes description from web for given problem number.
     if filename.endswith(".py") and filename.startswith('euler'): 
         with open(filename,'r') as f:lines = f.readlines()
         try:
@@ -29,15 +29,15 @@ def add(filename):
     else:
         print('Filename not in euler problem format',filename,"pass")
     
-def add_single():
+def add_single(): #for single use   
     filename =  os.path.basename(sys.argv[0])
     add(filename)
         
-def add_loop_dir():
+def add_loop_dir(): #loop directory
     for filename in os.listdir('./'):
         add(filename)
 
-def delete(filename):
+def delete(filename): #this was created just for testing, deletes descriptions from files.
     if filename.endswith(".py") and filename.startswith('euler'): 
             with open(filename,'r') as f:lines = f.readlines()
             try:
@@ -57,11 +57,11 @@ def delete(filename):
             except IndexError:
                 print("File is empty:",filename)
  
-def delete_loop_dir():
+def delete_loop_dir(): #as above
     for filename in os.listdir('./'):
         delete(filename)
        
-def delete_single():
+def delete_single(): #as above
     filename =  os.path.basename(sys.argv[0])
     delete(filename)
 
