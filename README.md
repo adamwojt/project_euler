@@ -1,6 +1,6 @@
 ## My [Project Euler](https://projecteuler.net/) solutions.
 
-All solutions are written solely by myself in Python.
+Old stuff from when I was learning Python.
 
 'add_description.py' - scrapes data from website to add description to individual .py files
 
